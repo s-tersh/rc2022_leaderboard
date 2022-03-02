@@ -1,38 +1,196 @@
+@font-face {
+  font-family: 'FiraSansRegular';
+  src: url('/public/fonts/Fira_Sans/FiraSans-Regular.ttf');
+}
+@font-face {
+  font-family: 'FiraSansBold';
+  src: url('/public/fonts/Fira_Sans/FiraSans-Bold.ttf');
+}
+html {
+  background-color: #F6F6F6;
+}
+body {
+  font-family: 'FiraSansRegular';
+  font-size: 16pt;
+  color: #3C3C3C;
+}
+h2 {
+  font-family: 'FiraSansBold';
+  font-size: 2.25rem;
+  margin: 0;
+}
+h3 {
+  font-family: 'FiraSansBold';
+  font-size: 1.5rem;
+  margin: 0;
+}
+p {
+  font-size: 1rem;
+  margin: 0;
+}
 .App {
-  text-align: center;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+.screen-container {
+  height: 100%;
+  width: 100%;
+  max-width: 720px;
+}
+.bottombar-container {
+  position: fixed;
+  left: 0;
+  right: 0;
+  height: 8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  bottom: 0;
+  background: linear-gradient(0deg, #6F6F6FC9, #6F6F6F00);
+  z-index: 100;
+}
+.bottombar-button {
+  font-family: 'FiraSansBold';
+  font-size: 1rem;
+  color: #FFFFFF;
+  width: 15rem;
+  height: 3rem;
+  border: 0;
+  border-radius: 3rem;
+  background-color: #D5D936;
+  box-shadow: 0 0.25rem 0.25rem 0 rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+.bottombar-button:hover {
+  background-color: #E8CC3A;
+}
+.bottombar-button:active {
+  background-color: #E7C410;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.splashscreen-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  width: 100%;
+  background-image: url('/public/INTRO_bg_splash.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.splashscreen-container p {
+  font-size: 1.5rem;
+  color: #6F6F6F;
 }
 
-.App-link {
-  color: #61dafb;
+.mainscreen-container {
+  background-image: url('/public/INTRO_bg_main.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.mainscreen-container h3 {
+  color: #FFFFFF;
+  margin: 3rem 0;
+  text-align: center;
+}
+.leader-avatar {
+  display: block;
+  margin: 0 auto;
+  width: 10rem;
+  height: 10rem;
+  border: 1.25rem solid #FFFFFF;
+  object-fit: cover;
+  border-radius: 10rem;
+}
+.leader-status {
+  font-family: 'FiraSansBold';
+  font-size: 1.5rem;
+  color: #FFFFFF;
+  text-align: center;
+  margin-top: 0.5rem;
+}
+.leader-fullname {
+  font-family: 'FiraSansBold';
+  font-size: 2.25rem;
+  text-align: center;
+  margin-top: 1rem;
+}
+.leader-club {
+  font-size: 1.5rem;
+  color: #6F6F6F;
+  text-align: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.list {
+  margin-top: 3rem;
+}
+
+.listitem-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+  height: 5rem;
+  background-color: #FFFFFF;
+  margin: 0 1rem 0.75rem 1rem;
+  border-radius: 0.25rem;
+  box-shadow: 0 0.25rem 0.25rem 0 rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+.listitem-content {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 1;
+}
+.listitem-place {
+  width: 3rem;
+  text-align: center;
+  color: #6F6F6F;
+}
+.listitem-avatar {
+  height: 2.75rem;
+  width: 2.75rem;
+  border-radius: 3rem;
+  border: 3px solid #6F6F6F;
+}
+.listitem-subdata {
+  flex-grow: 1;
+  margin-left: 1rem;
+}
+.listitem-fullname {
+  font-family: 'FiraSansBold';
+  font-size: 1.25rem;
+}
+.listitem-club {
+  font-size: 1rem;
+  color: #6F6F6F;
+}
+.listitem-points-container {
+  width: 3rem;
+  color: #6F6F6F;
+  text-align: center;
+}
+.listitem-points-container p:first-of-type {
+  font-family: 'FiraSansBold';
+  font-size: 1rem;
+  margin: 0;
+}
+.listitem-points-container p:last-of-type {
+  font-size: 0.5rem;
+  margin: 0;
+}
+.listitem-repeat-place {
+  font-family: 'FiraSansBold';
+  font-size: 5rem;
+  color: #BABABA;
+  position: absolute;
+  opacity: 0.25;
 }

@@ -128,6 +128,7 @@ p {
 
 .list {
   margin-top: 3rem;
+  padding-bottom: 8rem;
 }
 
 .listitem-container {
@@ -193,4 +194,19 @@ p {
   color: #BABABA;
   position: absolute;
   opacity: 0.25;
+}
+
+.back-toner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 999;
+  text-align: center;
+  color: #FFFFFF;
 }

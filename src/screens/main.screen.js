@@ -1,16 +1,13 @@
 import React, { useEffect, useMemo, useState } from "react"
 import Firebase from "../firebase"
 import Loader from '../components/loader.component'
-
 import Page from "../components/page.component"
-import { AnimatePresence, motion } from "framer-motion"
 
 function MainScreen() {
     
     const buttons = ["Смотреть результаты девушек", "Смотреть результаты парней"]
     const [genderID, setGenderID] = useState(0)
     const [athletes, setAthletes] = useState(null)
-    const [leader, setLeader] = useState(null)
     const app = useMemo(() => new Firebase(), []) 
 
     useEffect(() => {

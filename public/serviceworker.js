@@ -2,7 +2,7 @@ const CACHE = 'cache-v1';
 
 self.addEventListener('install', (event) => {
     event.waitUntil(
-        caches.open(CACHE).then((cache) => cache.addAll(['./icons/', './static/'])));
+        caches.open(CACHE).then((cache) => cache.addAll(['./images/', './static/'])));
 });
 
 self.addEventListener('activate', (event) => {

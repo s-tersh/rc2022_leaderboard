@@ -43,7 +43,7 @@ const List = ({ athletes, leader, ...props }) => {
                         :
                         <p className="listitem-place">#{index + 1}</p>
                     }
-                    <img className="listitem-avatar" alt="athlete_avatar" src={athlete.avatar || `${process.env.PUBLIC_URL}/avatar.svg`} />
+                    <img className="listitem-avatar" alt="athlete_avatar" src={athlete.avatar || `${process.env.PUBLIC_URL}/images/avatar.svg`} />
                     <div className="listitem-subdata">
                         <p className="listitem-fullname">{athlete.name}</p>
                         <p className="listitem-club">{athlete.city}{athlete.club !== "" ? `, «${athlete.club}»` : ""}</p>

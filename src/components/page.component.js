@@ -17,7 +17,7 @@ const Page = ({data, ...props}) => {
             <>
                 <div style={{'display': 'flex', 'flexDirection': 'column', 'alignItems': 'center'}}>
                     <div style={{'position': 'relative', 'display': 'flex', 'justifyContent': 'center'}}>
-                        <img alt="leader-avatar" src={leader.avatar || `${process.env.PUBLIC_URL}/avatar.svg`} style={{'position': 'absolute', 'width': 160, 'height': 160, 'bottom': 75, 'border': '20px solid var(--color-leader)', 'borderRadius': '50%', 'objectFit': 'cover'}}/>
+                        <img alt="leader-avatar" src={leader.avatar || `${process.env.PUBLIC_URL}/images/avatar.svg`} style={{'position': 'absolute', 'width': 160, 'height': 160, 'bottom': 75, 'border': '20px solid var(--color-leader)', 'borderRadius': '50%', 'objectFit': 'cover'}}/>
                         <LeaderShield fill="var(--color-leader)" />
                     </div>
                     <p className="leader-status">Leader</p>

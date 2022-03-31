@@ -14,11 +14,6 @@ function MainScreen() {
         app.getAthletes((data) => setAthletes((data.map((item) => item.map((athlete_data) => JSON.parse(athlete_data))))))      
     }, [app])
 
-    useEffect(() => {
-        var finded = athletes && athletes.at(genderID).sort((a, b) => (a.total > b.total) ? -1 : 1).at(0)
-        finded && finded.total > 0 ? setLeader(finded) : setLeader(null)
-    }, [athletes, genderID])
-
     function changeGender() {
         genderID === 0 ? setGenderID(1) : setGenderID(0)
     }

@@ -1,11 +1,4 @@
-@font-face {
-  font-family: 'FiraSansRegular';
-  src: url('/public/fonts/Fira_Sans/FiraSans-Regular.ttf');
-}
-@font-face {
-  font-family: 'FiraSansBold';
-  src: url('/public/fonts/Fira_Sans/FiraSans-Bold.ttf');
-}
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;700&display=swap');
 :root {
   --primary-color: #778899;
   --secondary-color: #fafafa75;
@@ -17,22 +10,23 @@
   --color-leader: #ffd700c2;
   --color-second: #c0c0c0;
   --color-third: #cd7d32;
+  --font-family: 'Fira Sans', sans-serif;
 }
 html {
   background-color: var(--background-color);
 }
 body {
-  font-family: 'FiraSansRegular';
+  font-family: var(--font-family);
   font-size: 16pt;
   color: var(--color-text);
 }
 h2 {
-  font-family: 'FiraSansBold';
+  font-family: var(--font-family);
   font-size: 2.25rem;
   margin: 0;
 }
 h3 {
-  font-family: 'FiraSansBold';
+  font-family: var(--font-family);
   font-size: 1.5rem;
   margin: 0;
 }
@@ -63,7 +57,7 @@ p {
   z-index: 100;
 }
 .bottombar-button {
-  font-family: 'FiraSansBold';
+  font-family: var(--font-family);
   font-size: 1rem;
   color: var(--color-text);
   height: 3rem;
@@ -105,14 +99,14 @@ p {
   border-radius: 10rem;
 }
 .leader-status {
-  font-family: 'FiraSansBold';
+  font-family: var(--font-family);
   font-size: 1.5rem;
   color: var(--color-leader);
   text-align: center;
   margin-top: 0.5rem;
 }
 .leader-fullname {
-  font-family: 'FiraSansBold';
+  font-family: var(--font-family);
   font-size: 2.25rem;
   text-align: center;
   margin-top: 1rem;
@@ -163,7 +157,7 @@ p {
   margin-left: 1rem;
 }
 .listitem-fullname {
-  font-family: 'FiraSansBold';
+  font-family: var(--font-family);
   font-size: 1rem;
 }
 .listitem-club {
@@ -186,7 +180,8 @@ p {
   text-align: center;
 }
 .listitem-points-container p:first-of-type {
-  font-family: 'FiraSansBold';
+  font-family: var(--font-family);
+  font-weight: 500;
   font-size: 1rem;
   margin: 0;
 }
@@ -196,7 +191,8 @@ p {
 }
 
 .listitem-repeat-place {
-  font-family: 'FiraSansBold';
+  font-family: var(--font-family);
+  font-weight: 700;
   font-size: 5rem;
   color: #BABABA75;
   position: absolute;

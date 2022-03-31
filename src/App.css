@@ -6,13 +6,25 @@
   font-family: 'FiraSansBold';
   src: url('/public/fonts/Fira_Sans/FiraSans-Bold.ttf');
 }
+:root {
+  --primary-color: #778899;
+  --secondary-color: #fafafa75;
+  --color-text: #e2e2e2;
+  --background-color: #34353d;
+  --accent-color-green: #f0a013;
+  --accent-color-red: #dc612d;
+  --color-list-item: #3d3f48;
+  --color-leader: #ffd700c2;
+  --color-second: #c0c0c0;
+  --color-third: #cd7d32;
+}
 html {
-  background-color: #F6F6F6;
+  background-color: var(--background-color);
 }
 body {
   font-family: 'FiraSansRegular';
   font-size: 16pt;
-  color: #3C3C3C;
+  color: var(--color-text);
 }
 h2 {
   font-family: 'FiraSansBold';
@@ -38,57 +50,42 @@ p {
 .screen-container {
   height: 100%;
   width: 100%;
-  max-width: 720px;
 }
 .bottombar-container {
-  position: fixed;
-  left: 0;
-  right: 0;
-  height: 8rem;
+  position: sticky;
+  padding: 1rem 0;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   bottom: 0;
-  background: linear-gradient(0deg, #6F6F6FC9, #6F6F6F00);
+  background: linear-gradient(0deg, #6F6F6FC9, #6f6f6fa6);
   z-index: 100;
 }
 .bottombar-button {
   font-family: 'FiraSansBold';
   font-size: 1rem;
-  color: #FFFFFF;
-  width: 15rem;
+  color: var(--color-text);
   height: 3rem;
+  padding: 0 2rem;
   border: 0;
-  border-radius: 3rem;
-  background-color: #D5D936;
-  box-shadow: 0 0.25rem 0.25rem 0 rgba(0, 0, 0, 0.1);
+  border-radius: 0.5rem;
+  background-color: #5877c5;
+  box-shadow: 0 0.5rem 1rem 0 #00000050;
   cursor: pointer;
 }
+.bottombar-button:not(:last-of-type) {
+  margin-bottom: 1rem;
+}
 .bottombar-button:hover {
-  background-color: #E8CC3A;
+  background-color: #6b8ee6;
 }
 .bottombar-button:active {
-  background-color: #E7C410;
+  background-color: #4e69ad;
 }
 
-.splashscreen-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  background-image: url('/public/INTRO_bg_splash.svg');
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-}
-.splashscreen-container p {
-  font-size: 1.5rem;
-  color: #6F6F6F;
-}
 
 .mainscreen-container {
-  background-image: url('/public/INTRO_bg_main.svg');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -110,7 +107,7 @@ p {
 .leader-status {
   font-family: 'FiraSansBold';
   font-size: 1.5rem;
-  color: #FFFFFF;
+  color: var(--color-leader);
   text-align: center;
   margin-top: 0.5rem;
 }
@@ -128,22 +125,20 @@ p {
 
 .list {
   margin-top: 3rem;
-  padding-bottom: 8rem;
 }
 
 .listitem-container {
   display: flex;
   align-items: center;
   position: relative;
-  height: 5rem;
-  background-color: #FFFFFF;
-  margin: 0 1rem 0.75rem 1rem;
-  border-radius: 0.25rem;
+  background-color: var(--color-list-item);
+  margin: 0 1rem 0.5rem 1rem;
+  border-radius: 0.5rem;
   box-shadow: 0 0.25rem 0.25rem 0 rgba(0, 0, 0, 0.1);
+  padding: 0.5rem 0;
   overflow: hidden;
 }
 .listitem-content {
-  position: absolute;
   width: 100%;
   height: 100%;
   display: flex;
@@ -154,11 +149,12 @@ p {
 .listitem-place {
   width: 3rem;
   text-align: center;
-  color: #6F6F6F;
+  color: var(--color-text);
 }
 .listitem-avatar {
   height: 2.75rem;
   width: 2.75rem;
+  object-fit: cover;
   border-radius: 3rem;
   border: 3px solid #6F6F6F;
 }
@@ -168,11 +164,21 @@ p {
 }
 .listitem-fullname {
   font-family: 'FiraSansBold';
-  font-size: 1.25rem;
+  font-size: 1rem;
 }
 .listitem-club {
-  font-size: 1rem;
+  font-size: 0.75rem;
+  color: var(--secondary-color);
+}
+.listitem-events-container {
+  overflow: hidden;
+}
+.listitem-events-container p {
+  font-size: 0.85rem;
   color: #6F6F6F;
+}
+.listitem-events-container p:first-of-type {
+  padding-top: 1rem;
 }
 .listitem-points-container {
   width: 3rem;
@@ -188,10 +194,11 @@ p {
   font-size: 0.5rem;
   margin: 0;
 }
+
 .listitem-repeat-place {
   font-family: 'FiraSansBold';
   font-size: 5rem;
-  color: #BABABA;
+  color: #BABABA75;
   position: absolute;
   opacity: 0.25;
 }

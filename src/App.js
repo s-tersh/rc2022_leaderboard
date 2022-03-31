@@ -4,7 +4,6 @@ import MainScreen from './screens/main.screen';
 function App() {
   return (
     <div className="App">
-      {/* <SplashScreen /> */}
       <MainScreen />
     </div>
   );

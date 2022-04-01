@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react"
 import { ReactComponent as LeaderShield } from '../assets/shield.svg'
 import List from '../components/list.component'
+import { motion } from "framer-motion"
 
 const Page = ({data, ...props}) => {
 
@@ -15,7 +16,7 @@ const Page = ({data, ...props}) => {
         {
             leader ?
             <>
-                <div style={{'display': 'flex', 'flexDirection': 'column', 'alignItems': 'center'}}>
+                <motion.div initial={{'scale': 0, 'opacity': 0}} animate={{'scale': 1, 'opacity': 1}} style={{'display': 'flex', 'flexDirection': 'column', 'alignItems': 'center'}}>
                     <div style={{'position': 'relative', 'display': 'flex', 'justifyContent': 'center'}}>
                         <img alt="leader-avatar" src={leader.avatar || `${process.env.PUBLIC_URL}/images/avatar.svg`} style={{'position': 'absolute', 'width': 160, 'height': 160, 'bottom': 75, 'border': '20px solid var(--color-leader)', 'borderRadius': '50%', 'objectFit': 'cover'}}/>
                         <LeaderShield fill="var(--color-leader)" />
@@ -23,7 +24,7 @@ const Page = ({data, ...props}) => {
                     <p className="leader-status">Leader</p>
                     <p className="leader-fullname">{leader.name} {leader.lastname}</p>
                     <p className="leader-club">{leader.city} {leader.club ? `, «${leader.club}»` : ''}</p>
-                </div>
+                </motion.div>
                 <List leader athletes={data.slice(1)} />
             </>
             :

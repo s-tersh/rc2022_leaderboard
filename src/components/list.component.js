@@ -51,9 +51,10 @@ const List = ({ athletes, leader, ...props }) => {
                             {
                                 detailed.includes(index) &&
                                 <motion.div initial={{'height': 0}} animate={{'height': 'auto'}} exit={{'height': 0}} className='listitem-events-container'>
-                                    {athlete.events.map((event, index) => {
-                                        return <p key={`event-${index}`}># {index + 1} - {event.place} место / {event.points} баллов</p>
-                                    })}
+                                    <p>#1 - {athlete.events[0].res_1} кг / {athlete.events[0].res_2} кг</p>
+                                    <p>#2 - {athlete.events[1].res_1} / {athlete.events[1].res_2} повторений</p>
+                                    <p>#3 - {athlete.events[2].res_1} повторений</p>
+                                    <p>#4 - {athlete.events[3].res_1} / {athlete.events[3].res_2} повторений</p>
                                 </motion.div>
                             }
                         </AnimatePresence>
